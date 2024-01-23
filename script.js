@@ -16,8 +16,26 @@ function calculateAndDisplay() {
     document.getElementById('amtPerPersonResult').innerText = 'Amount per person: $' + amtPerPers.toFixed(2)
 }
 
+//Helper functions to calculate everything
+function calculateTip(bill, quality) {
+    if (quality === 'Great') {
+        return bill * 0.2
+    } else if (quality === 'Good') {
+        return bill * 0.15
+    } else if (quality === 'Poor') {
+        return bill * 0.1
+    } else {
+        return 0
+    }
+}
 
+function calculateTotalBill(bill, tip) {
+    return bill + tip
+}
 
+function calculateAmtPerPers(totalBill, numOfPpl){
+    return totalBill / numOfPpl
+}
 
 
 
